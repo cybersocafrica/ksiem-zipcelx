@@ -10,8 +10,12 @@ import rels from './statics/rels';
 import contentTypes from './statics/[Content_Types].xml';
 import templateSheet from './templates/worksheet.xml';
 
-export const generateXMLWorksheet = (rows) => {
-  const XMLRows = generatorRows(rows);
+import defaultStyles from './statics/default_styles.xml';
+import styleTemplate from './templates/styles.xml';
+
+
+export const generateXMLWorksheet = (rows, styles) => {
+  const XMLRows = generatorRows(rows, styles);
   return templateSheet.replace('{placeholder}', XMLRows);
 };
 
@@ -27,8 +31,15 @@ export default (config) => {
   zip.file('_rels/.rels', rels);
   zip.file('[Content_Types].xml', contentTypes);
 
-  const worksheet = generateXMLWorksheet(config.sheet.data);
+  const styles = [];
+
+  const worksheet = generateXMLWorksheet(config.sheet.data, styles);
   xl.file('worksheets/sheet1.xml', worksheet);
+
+  if (styles.length === 0) {
+    const styleFile = styleTemplate.replace('{placeholder}', defaultStyles);
+    xl.file('styles.xml', styleFile);
+  }
 
   return zip.generateAsync({
     type: 'blob',

@@ -8,7 +8,8 @@ export default {
     data: [
       [{
         value: 'Test',
-        type: 'string'
+        type: 'string',
+        style: 'xyz'
       }, {
         value: 1000,
         type: 'number'
