@@ -1,7 +1,9 @@
-zipcelx
+zipcelx-style
 =======
 
 Generate XLSX files in the browser, with minimal footprint. The vision is to provide the smallest possible package for generating valid XLSX files in the browser.
+
+This forked version adds rudimentary support for adding styles to cells. Right now, just background color is supported, as that's all I currently have a need for.
 
 If you're looking for advanced functionality, [js-xlsx](https://github.com/SheetJS/js-xlsx) is a solid choice.
 
