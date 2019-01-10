@@ -16,6 +16,8 @@ export default (cell, index, rowIndex, styles) => {
     if (styleIndex === -1) {
       styles.push(cell.style);
       styleIndex = 1;
+    } else if (styleIndex === 0) {
+      styleIndex = 1;
     }
   }
 
