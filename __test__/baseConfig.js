@@ -9,7 +9,7 @@ export default {
       [{
         value: 'Test',
         type: 'string',
-        style: 'xyz'
+        style: '1'
       }, {
         value: 1000,
         type: 'number'
