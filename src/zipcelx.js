@@ -69,7 +69,7 @@ export default (config) => {
     colorsString += '</indexedColors></colors>';
 
     let styleData = styleInnerTemplate.replace('{fillsPlaceholder}', fillsString);
-    styleData = styleData.replace('{xfsPlaceholder}', cellXfsString + colorsString);
+    // styleData = styleData.replace('{xfsPlaceholder}', cellXfsString + colorsString);
 
     const styleFile = styleTemplate.replace('{placeholder}', styleData);
     xl.file('styles.xml', styleFile);
