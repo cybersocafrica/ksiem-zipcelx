@@ -3,6 +3,7 @@ import FileSaver from 'file-saver';
 
 import validator from './validator';
 import generatorRows from './formatters/rows/generatorRows';
+import generatorCols from './formatters/cols/generatorCols';
 
 import workbookXML from './statics/workbook.xml';
 import workbookXMLRels from './statics/workbook.xml.rels';
@@ -14,9 +15,10 @@ import templateSheet from './templates/worksheet.xml';
 import styleTemplate from './templates/styles.xml';
 import styleInnerTemplate from './templates/styles_inner_template.xml';
 
-export const generateXMLWorksheet = (rows, styles) => {
+export const generateXMLWorksheet = (rows, cols, styles) => {
   const XMLRows = generatorRows(rows, styles);
-  return templateSheet.replace('{placeholder}', XMLRows);
+  const XMLCols = generatorCols(cols);
+  return templateSheet.replace('{placeholder}', XMLRows).replace('{colsPlaceholder}', XMLCols);
 };
 
 export default (config) => {
@@ -33,7 +35,7 @@ export default (config) => {
 
   const styles = [];
 
-  const worksheet = generateXMLWorksheet(config.sheet.data, styles);
+  const worksheet = generateXMLWorksheet(config.sheet.data, config.sheet.cols, styles);
   xl.file('worksheets/sheet1.xml', worksheet);
 
   // if (styles.length === 0) {
