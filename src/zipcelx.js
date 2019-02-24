@@ -55,18 +55,18 @@ export default (config) => {
     }
 
     let fillsString = `<fills count="${backgroundFills.length + 2}"><fill /><fill><patternFill patternType="gray125"/></fill>`;
-    let cellXfsString = `<cellXfs count="${backgroundFills.length + 1}"><xf />`;
-    let colorsString = '<colors><indexedColors>';
+    // let cellXfsString = `<cellXfs count="${backgroundFills.length + 1}"><xf />`;
+    // let colorsString = '<colors><indexedColors>';
 
     for (let i = 0; i < backgroundFills.length; i++) {
       fillsString += `<fill><patternFill patternType="solid"><fgColor indexed="${i}"/></patternFill></fill>`;
-      colorsString += `<rgbColor rgb="${backgroundFills[i]}"/>`;
-      cellXfsString += `<xf fillId="${i + 2}" applyFill="1"/>`;
+      // colorsString += `<rgbColor rgb="${backgroundFills[i]}"/>`;
+      // cellXfsString += `<xf fillId="${i + 2}" applyFill="1"/>`;
     }
 
     fillsString += '</fills>';
-    cellXfsString += '</cellXfs>';
-    colorsString += '</indexedColors></colors>';
+    // cellXfsString += '</cellXfs>';
+    // colorsString += '</indexedColors></colors>';
 
     let styleData = styleInnerTemplate.replace('{fillsPlaceholder}', fillsString);
     // styleData = styleData.replace('{xfsPlaceholder}', cellXfsString + colorsString);
