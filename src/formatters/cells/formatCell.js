@@ -2,7 +2,7 @@ import { validTypes, CELL_TYPE_STRING, WARNING_INVALID_TYPE } from '../../common
 import generatorStringCell from './generatorStringCell';
 import generatorNumberCell from './generatorNumberCell';
 
-export default (cell, index, rowIndex, styles) => {
+export default (cell, index, rowIndex, styles) => { // eslint-disable-line
   if (validTypes.indexOf(cell.type) === -1) {
     console.warn(WARNING_INVALID_TYPE);
     cell.type = CELL_TYPE_STRING;

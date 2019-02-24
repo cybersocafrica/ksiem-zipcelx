@@ -68,7 +68,7 @@ export default (config) => {
     // cellXfsString += '</cellXfs>';
     // colorsString += '</indexedColors></colors>';
 
-    let styleData = styleInnerTemplate.replace('{fillsPlaceholder}', fillsString);
+    const styleData = styleInnerTemplate.replace('{fillsPlaceholder}', fillsString);
     // styleData = styleData.replace('{xfsPlaceholder}', cellXfsString + colorsString);
 
     const styleFile = styleTemplate.replace('{placeholder}', styleData);
