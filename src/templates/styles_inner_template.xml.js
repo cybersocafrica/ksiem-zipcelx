@@ -10,14 +10,14 @@ export default `<fonts count="1">
     </fonts>
 {fillsPlaceholder}
 <borders count="1">
-        <border>
-            <left/>
-            <right/>
-            <top/>
-            <bottom/>
-            <diagonal/>
-        </border>
-    </borders>
+    <border>
+        <left/>
+        <right/>
+        <top/>
+        <bottom/>
+        <diagonal/>
+    </border>
+</borders>
 <cellStyleXfs count="1">
     <xf numFmtId="0" fontId="0" fillId="0" borderId="0"/>
 </cellStyleXfs>
