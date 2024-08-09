@@ -81,7 +81,5 @@ export default (config) => {
     type: 'blob',
     mimeType:
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-  }).then((blob) => {
-    FileSaver.saveAs(blob, `${config.filename}.xlsx`);
-  });
+  }).then((blob) => blob);
 };
