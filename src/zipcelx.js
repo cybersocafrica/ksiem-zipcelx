@@ -78,8 +78,6 @@ export default (config) => {
   // }
 
   return zip.generateAsync({
-    type: 'blob',
-    mimeType:
-      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-  }).then((blob) => blob);
+    type: 'blob'
+  }).then(async (blob) => await blob.arrayBuffer());
 };
