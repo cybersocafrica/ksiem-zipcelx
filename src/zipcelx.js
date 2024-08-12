@@ -1,5 +1,5 @@
 import JSZip from 'jszip';
-import FileSaver from 'file-saver';
+// import FileSaver from 'file-saver';
 
 import validator from './validator';
 import generatorRows from './formatters/rows/generatorRows';
@@ -79,5 +79,5 @@ export default (config) => {
 
   return zip.generateAsync({
     type: 'blob'
-  }).then(async (blob) => await blob.arrayBuffer());
+  }).then(blob => blob.arrayBuffer());
 };
