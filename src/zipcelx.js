@@ -78,6 +78,6 @@ export default (config) => {
   // }
 
   return zip.generateAsync({
-    type: 'blob'
-  }).then(blob => blob.arrayBuffer());
+    type: 'nodebuffer'
+  }).then(blob => blob);
 };
